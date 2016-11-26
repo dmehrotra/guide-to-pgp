@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class='step-1'>
+<head>
+	<meta name="description" 
+      content="A Privacy guide to how to blu/hide your house on google maps.  Redact your image.">
+      <meta name="author" content="Dhruv Mehrotra">
+
+	<link rel="stylesheet" type="text/css" href="./css/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="./css/examples.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>PGP on OSX</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+
+	<script type="text/javascript" src="./js/fullpage.min.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+			anchors: ['begin', 'about', 'concepts','roadmap','gpgtools'],
+			sectionsColor: ['#FFF', '#000', '#000', '#000',"#000","#000","#000"],
+			css3: true
+		});
+		
+	});
+</script>
+</head>
+<body>
+
+
+	<div id="header"> <span class="small">></span>  <span class="encrypt-decrypt">PGP on OSX </span>  <span class="blink">|</span> </div>
+
+	<div id="fullpage">
+		<div class="section" id="section0">
+		    <div class="slide-container">
+				<p class='black lh'>Secure communication occurs when two entities convey information in a way that is indecipherable or unknowable to a a third party.  <a class="link" href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy (PGP)</a> is a data encryption and decryption computer program that provides cryptographic privacy and authentication for secure communication. <span class="red">This guide will walk through how to enecrypt emails on an OSX machine using PGP</span><span class="blink">|</span></p>
+				
+			</div>
+		</div>
+		<div class="section" id="section2">
+			    <div class="slide" id="slide1">
+					<div class="intro">
+						<h1 style='font-size:35px'><span class="small">::</span> concepts <span class="small">::</span><span class="blink">|</span></h1>
+					</div>
+				</div>
+				<div class="slide" id="slide2">
+					<div class="slide-container">
+						<p class='white'> "Pretty Good Privacy (PGP) is a way to protect your email communications from being read by anyone except their intended recipients...It can also be used to prove that an email came from a particular person, instead of being a fake message sent by another sender." <br>
+						<a class="link" href='https://en.wikipedia.org/wiki/Key_(cryptography)'>- EFF</a></p>
+					</div>
+				</div>
+			    <div class="slide" id="slide2">
+					<div class="slide-container">
+						<img src="./images/pgp.jpeg" width='300'alt="">
+						<p class='white' style="font-size:20px; width:300px; margin:auto">
+							PGP Encryption algorithmically obfuscates your message using the recipients public key.  The recipient uses their own private key to decrypt the message.<br>
+						</p>
+
+					</div>
+				</div>
+			   	<div class="slide" id="slide3">
+					<div class="slide-container">
+						<p class='white'>
+							Example:  <span class="red">I</span> will <a class="link" href='http://searchsecurity.techtarget.com/definition/encryption'>encrypt</a> a message to Leon using his public key. <span class="red">Leon</span> recieves my message and decrypts it with his personal private key.
+						</p>
+					</div>
+				</div>
+				<div class="slide" id="slide4">
+					<div class="slide-container">
+						<iframe id='video' width="420" height="515"
+						src="https://www.youtube.com/embed/1-MPcUHhXoc">
+						</iframe>
+					</div>
+				</div>
+			</div>
+
+		<div class="section" id="section3">
+			<div class="slide-container fw">
+				<p class='black lh'>The following steps will set up <a class="link" href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy (PGP)</a> on an OSX machine using <a class='link' href="https://gpgtools.org/">GPGTools</a>. We will then create simple keyboard shortcuts so that you can easily encrypt and decrypt any communication. Lastly we will walk through sending an <span class="encrypt">encrypted</span> email with gmail <span class="icn-wrp"><img class='icn'src="./images/New_Logo_Gmail.svg.png" alt=""/> </span>  </p>		
+			</div>	
+
+		</div>
+		<div class="section" id="section4">
+			    <div class="slide-container">
+					<div class="intro">
+						<h1 style='font-size:55px; background:black;padding:30px;'><span class="small">::</span> step-one <span class="small">::</span>  download <a class='link' href="https://gpgtools.org/">gpg_tools</a>
+							<span class='red'>without GPG MAIL</span>
+						 <span class="blink">|</span></h1>
+					</div>
+				</div>
+		</div>
+		<div class="section" id="section5">
+		    <div class="slide" id="slide1">
+				<div class="intro">
+					<h1 style='font-size:35px;'><span class="small">::</span> step-two <span class="small">::</span> generating your pgp key<span class="blink">|</span></h1>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="slide-container">
+					<img src="./images/key.png" width='400'alt="">
+					<p class='white' style="font-size:20px; width:400px; margin:auto">
+						After launching GPG Keychain Access for the first time you will be able to generate a new key pair. Type in your name and your email address and check the box that says "Upload public key after generation." Expand the "Advanced options" section. Incrase the key length to 4096 for extra safety.
+					</p>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="slide-container">
+					<p class='white'>
+						The reliability of PGP rests on a secure password.  The best password doesn't necessarily just have capital letters and special characters. The safest password is actually a <span class="red">specific phrase or sentence </span> that is relevant to you. Something like, <span class="red">frankisafatcatthatwatchedmegeneratemypgpkey</span> is likely pretty secure...other than the fact that it is on this website.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section6">
+		    <div class="slide" id="slide1">
+				<div class="intro">
+					<h1 style='font-size:35px;'><span class="small">::</span> step-three <span class="small">::</span> hot keys<span class="blink">|</span></h1>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="slide-container">
+					<div class="left">
+						<ul style="text-align:left; font-size:20px;">
+						    <li> > Open System Preferences, select the "Keyboard" pane, and go to the "Shortucts" tab. On the left hand side, select "Services." Then, on the right, scroll down to the subsection "Text" and look for the entries that start with "OpenPGP"</li>
+						    <br>
+						    <li> > Go through each OpenPGP entry, unchecking each one, deleting the keyboard shortcut. 
+						   	</li>	
+						   	<br>
+						   	<li> > Enable "OpenPGP: Decrypt" and  "OpenPGP: Encrypt" and set their shortcuts to something you will remember.
+						   	</li>		    
+						</ul>
+					</div>
+					<div class="right">
+						<img src="./images/shortcuts.png" width='500px'/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section7">
+		    <div class="slide" id="slide1">
+				<div class="intro">
+					<h1 style='font-size:35px;'><span class="small">::</span> step-four <span class="small">::</span> encrypt and decrypt your emails<span class="blink">|</span></h1>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="slide-container">
+					<div class="left">
+						<ul style="text-align:left; font-size:20px;">
+						    <li> > find the public key of the recepient of your communication.</li>
+						    <br>
+						    <li> > One way is to use GPG tools to lookup and import the key. 
+						   	</li>	
+						   	<br>
+						   	<li> > Often times people will attach their keys to an email they send, or link to it on their website. In these cases you will need to manually import these keys.
+						   	</li>		    
+						</ul>
+					</div>
+					<div class="right">
+						<img src="./images/retrieve.png" width='500px'/>
+					</div>
+				</div>
+			</div>
+			<div class="slide" id="slide3">
+				<div class="slide-container">
+					<div class="left">
+						<ul style="text-align:left; font-size:20px;">
+						    <li> > Though you could write your email in your email client, some, like gmail, will store your drafts before you have the chance to encrypt them.  To be safe its best to craft your emails a text editor. 
+						   	</li>
+						   	<br>
+						   	<li> > When you are finished, highlight the text and encrypt it using the hot key you assigned in the last step. 
+						   	</li>
+						   	<br>
+						   	<li> > When you press your hot keys, the GPG Tools dialog box will pop up.  From the application you can choose the key of your recipient to encrypt your email. 
+						   	</li>
+						   	<br>
+						   	<li> > Paste the full encyrpted text into your email client and send to the email address of the recipient. 
+						   	</li>		
+						   	<br>	    
+						</ul>
+					</div>
+					<div class="right">
+						<img src="./images/all.gif" width='500px'/>
+					</div>
+				</div>
+			</div>
+			<div class="slide" id="slide4">
+				<div class="slide-container">
+					<div class="left">
+						<ul style="text-align:left; font-size:20px;">
+						    <li> > When you recieve an encrypted email all you need to do is highlite it and decrypt it with the hot keys you provided in the first step.. 
+						   	</li>
+						</ul>
+					</div>
+					<div class="right">
+						<img src="./images/decrypt.gif" width='500px'/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section8">
+			<div class="intro" style='text-align:left'>
+				<p>
+					<span class="small ish "> > </span> thanks 
+				</p>
+				<p>
+					<span class="small ish "> > </span> dhruv.mehrotra3@gmail.com for questions  <span class="blink"> | </span>
+				</p>
+				
+				<p>
+					<span class="small ish "> > </span> <a href="http://dhruvmehrotra.info">dhruvmehrotra.info</a>
+				</p>
+				<p> 
+					<span class="small ish "> > </span> <a href="https://github.com/dmehrotra">github/dmehrotra</a> <span class="blink"> | </span>
+
+				</p>
+				<p> 
+					<span class="small ish "> > </span> <a href="https://twitter.com/dmehro">twitter.com/dmehro</a>
+				</p>
+			</div>
+				
+		</div>
+	</div>
+
+<script>
+$("#section3").css("background-image", "url(./images/encryption.png)");
+
+$("#section4").css("background-image", "url(./images/gpg.png)");
+
+var encrypted = false;
+setInterval(function(){
+	if (encrypted){
+		$(".encrypt-decrypt").html('PGP On Mac OS X')
+	}else{
+		$(".encrypt-decrypt").html("hQIdMAo3RwihDf8")
+	}
+	encrypted = !encrypted
+},7000)
+
+</script>
+</body>
+</html>
